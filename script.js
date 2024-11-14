@@ -1,22 +1,18 @@
 // Esperar a que el DOM se cargue completamente
 document.addEventListener('DOMContentLoaded', function() {
-    // Seleccionar todos los botones con la clase 'mostrar-mas' utilizando el DOM
-    const botonesMostrarMas = document.querySelectorAll('.mostrar-mas');
+    // Seleccionar el botón por su ID utilizando el DOM
+    const boton = document.getElementById('boton');
 
-    // Iterar sobre cada botón y agregar un evento de clic
-    botonesMostrarMas.forEach(function(boton) {
-        boton.addEventListener('click', function() {
-            // Seleccionar el párrafo de información adicional relacionado usando el DOM
-            const infoAdicional = this.nextElementSibling;
-
-            // Verificar el estado actual y alternar la visibilidad
-            if (infoAdicional.style.display === 'none') {
-                infoAdicional.style.display = 'block'; // Mostrar información adicional
-                this.textContent = 'Mostrar Menos'; // Cambiar el texto del botón
-            } else {
-                infoAdicional.style.display = 'none'; // Ocultar información adicional
-                this.textContent = 'Mostrar Más'; // Restaurar el texto original del botón
-            }
-        });
+    // Agregar un evento de clic al botón
+    boton.addEventListener('click', function() {
+        // Seleccionar el elemento del párrafo utilizando el DOM
+        const parrafo = document.getElementById('parrafo');
+        
+        // Modificar el contenido del párrafo
+        parrafo.textContent = 'El texto ha sido cambiado usando el DOM.';
+        
+        // Seleccionar el título y cambiar su color como otra manipulación del DOM
+        const titulo = document.getElementById('titulo');
+        titulo.style.color = 'blue';
     });
 });
